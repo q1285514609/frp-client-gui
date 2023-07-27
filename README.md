@@ -95,21 +95,21 @@
 
   获取AccessKey ID, AccessKey Secret
 
-  ![6](D:\01code\02python\frp\img\6.png)
+  ![6](img\6.png)
 
-  ![7](D:\01code\02python\frp\img\7.png)
+  ![7](img\7.png)
 
 * 2.根据下图所示配置服务端
 
   > 服务器中记得放行bind_port和vhost_http_port的端口
 
-![3](D:\01code\02python\frp\img\3.png)
+![3](img\3.png)
 
 * 3.配置客户端
 
   > 注意三级域名后面的点,以及域名第一位的点不能省略,二级域名可以选择随机
 
-![4](D:\01code\02python\frp\img\4.png)
+![4](img\4.png)
 
 说明：
 
