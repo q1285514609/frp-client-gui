@@ -113,13 +113,14 @@ class WinGUI(Tk):
 
     def __tk_tabs_lki5rwm9(self, parent):
         frame = Notebook(parent)
+        self.widget_dic["tk_tabs_lki5rwm9_2"] = self.__tk_frame_lki5rwm9_2(frame)
+        frame.add(self.widget_dic["tk_tabs_lki5rwm9_2"], text="阿里云")
         self.widget_dic["tk_tabs_lki5rwm9_0"] = self.__tk_frame_lki5rwm9_0(frame)
         frame.add(self.widget_dic["tk_tabs_lki5rwm9_0"], text="服务端")
         self.widget_dic["tk_tabs_lki5rwm9_1"] = self.__tk_frame_lki5rwm9_1(frame)
         frame.add(self.widget_dic["tk_tabs_lki5rwm9_1"], text="客户端")
         frame.select(self.widget_dic["tk_tabs_lki5rwm9_1"])
-        self.widget_dic["tk_tabs_lki5rwm9_2"] = self.__tk_frame_lki5rwm9_2(frame)
-        frame.add(self.widget_dic["tk_tabs_lki5rwm9_2"], text="阿里云")
+
         frame.place(x=10, y=10, width=287, height=155)
         return frame
 

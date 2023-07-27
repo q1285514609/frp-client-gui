@@ -1,10 +1,14 @@
 # frp客户端配置GUI
 
+## 注意事项
+- **需要将本程序放到frp的文件夹中使用**
+- **必须是阿里云的域名,本程序只对接了阿里云的动态解析,其他的可以自行添加**
+
 ## 功能介绍:
 
 - 主要针对需要映射http请求的需求编写,如映射http的接口地址或者web服务地址
 - 可视化配置FRP客户端（支持修改新增配置，阿里云解析）
-- *需要将本程序放到frp的文件夹中使用*
+
 
 ## 使用教程
 
@@ -22,7 +26,7 @@
 
   [Releases · fatedier/frp (github.com)](https://github.com/fatedier/frp/releases)
 
-  *linux*系统下载: frp_xxxxx_linux_amd64.tar.gz
+  **linux**系统下载: frp_xxxxx_linux_amd64.tar.gz
 
 * 2.在linux中解压后给frps这个文件开启可执行权限
 
@@ -67,24 +71,48 @@
   tcp_mux = true
   ```
 
+4. 配置systemctl服务启动
+
+   参考[使用 systemd | frp (gofrp.org)](https://gofrp.org/docs/setup/systemd/)
+
+   
+
 ### 2. 配置frp客户端
 
-* 1.根据下图所示配置服务端
+* 1.配置阿里云配置数据
 
-  > 记得放行bind_port的端口
+  获取AccessKey ID, AccessKey Secret
+
+  ![6](D:\01code\02python\frp\img\6.png)
+
+  ![7](D:\01code\02python\frp\img\7.png)
+
+* 2.根据下图所示配置服务端
+
+  > 服务器中记得放行bind_port和vhost_http_port的端口
 
 ![3](D:\01code\02python\frp\img\3.png)
 
-* 2.配置客户端
+* 3.配置客户端
+
+  
 
   > 注意三级域名后面的点,以及域名第一位的点不能省略,二级域名可以选择随机
 
 ![4](D:\01code\02python\frp\img\4.png)
 
-* 3.点击添加配置后,首先修改当前路径下的frpc.ini的配置文件,在将当前配置的域名,根据你的一级域名去添加解析
+说明：
 
-  新增的域名解析如下图
+如果不需要三级域名则不填写,二级和一级域名必须填写
 
-  ![image-20230727101104578](img/5.png)
+点击添加配置后,首先修改当前路径下的frpc.ini的配置文件,在将当前配置的域名,根据你的一级域名去添加解析
 
-* 4.最后启动程序,访问frp.132456.google.com:90(90是服务端配置中vhost_http_port的值)，相当于访问本地的127.0.0.1:本地应用端口
+新增的域名解析如下图
+
+![image-20230727101104578](img/5.png)
+
+
+
+* 4.最后启动程序,访问frp.132456.google.com:90(90是服务端配置中vhost_http_port的值)，相当于访问本地的127.0.0.1:{本地应用端口}
+
+  
