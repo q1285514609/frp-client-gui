@@ -1,6 +1,6 @@
 # frp客户端配置GUI
 
-本项目使用·https://github.com/iamxcd/tkinter-helper·进行界面
+本项目使用[https://github.com/iamxcd/tkinter-helper](https://github.com/iamxcd/tkinter-helper)绘制界面
 
 
 
@@ -126,3 +126,7 @@
 * 4.最后启动程序,访问frp.132456.google.com:90(90是服务端配置中vhost_http_port的值)，相当于访问本地的127.0.0.1:{本地应用端口}
 
 
+## 软件截图
+![image-20230727101104578](img/8.png)
+![image-20230727101104578](img/9.png)
+![image-20230727101104578](img/10.png)
