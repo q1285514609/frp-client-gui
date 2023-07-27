@@ -395,6 +395,8 @@ class Win(WinGUI):
         # 写入配置文件
         with open(self.config_file, 'w') as configfile:
             self.config.write(configfile)
+        messagebox.showinfo("提示", "保存成功")
+
 
     def update_table(self):
         # 先清空表格
@@ -465,6 +467,8 @@ class Win(WinGUI):
         # 新增域名解析
         self.add_domain_parse(".".join(self.client_config.get('client', 'after', fallback='').split('.')[1:]), self.client_config.get('client', 'before', fallback='') + domain, 'A', self.config.get('common', 'server_addr', fallback=''))
 
+        messagebox.showinfo("提示", "添加配置文件及域名解析成功")
+
     def but_ali_save(self, evt):
         # 保存 AccessKeyID 和 AccessKeySecret 到配置文件中
         access_key_id = self.widget_dic["tk_input_AccessKeyID"].get()
@@ -475,6 +479,7 @@ class Win(WinGUI):
         self.client_config.set('aliyun', 'AccessKeySecret', access_key_secret)
         with open(self.client_config_file, 'w') as configfile:
             self.client_config.write(configfile)
+        messagebox.showinfo("提示", "保存成功")
     def __event_bind(self):
         self.widget_dic["tk_button_but_server_save"].bind('<Button-1>', self.add_server_config)
         self.widget_dic["tk_button_but_portRandom"].bind('<Button-1>', self.port_random)
