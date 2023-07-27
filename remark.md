@@ -1,5 +1,9 @@
 # frp客户端配置GUI
 
+本项目使用·https://github.com/iamxcd/tkinter-helper·进行界面
+
+
+
 ## 注意事项
 - **需要将本程序放到frp的文件夹中使用**
 - **必须是阿里云的域名,本程序只对接了阿里云的动态解析,其他的可以自行添加**
@@ -79,6 +83,14 @@
 
 ### 2. 配置frp客户端
 
+> 在下面地址中下载frp的程序
+>
+> [Releases · fatedier/frp (github.com)](https://github.com/fatedier/frp/releases)
+>
+> **windows**系统下载: frp_xxxxx_windows_amd64.zip
+>
+> 解压后将本程序放到文件夹内
+
 * 1.配置阿里云配置数据
 
   获取AccessKey ID, AccessKey Secret
@@ -94,8 +106,6 @@
 ![3](D:\01code\02python\frp\img\3.png)
 
 * 3.配置客户端
-
-  
 
   > 注意三级域名后面的点,以及域名第一位的点不能省略,二级域名可以选择随机
 
@@ -115,4 +125,4 @@
 
 * 4.最后启动程序,访问frp.132456.google.com:90(90是服务端配置中vhost_http_port的值)，相当于访问本地的127.0.0.1:{本地应用端口}
 
-  
+
